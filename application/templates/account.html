@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block header %}
+{% endblock %}
+{% block title %}
+    Account
+{% endblock %}
+{% block page_name %} id="account-page" {% endblock %}
+{% block main %}
+    <div class="table-title list">
+        <div id="list-table-title">
+            <thing>Account</thing>
+        </div>
+    </div>
+<div class="table-box">
+    <table class="table">
+        <tbody>
+            <tr class="form head">
+                <td class="form-desc">First Name: <span class="black">&nbsp{% if first_name == "" %} None {% else %} {{ first_name }} {% endif %} </span>&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <span style="white-space: nowrap;">Last Name: <span class="black">&nbsp{% if last_name == "" %} None {% else %} {{ last_name }} {% endif %}</span></span></td>
+                <td class="form-desc">Username: <span class="black">&nbsp{{ username }} </span>&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <span style="white-space: nowrap;">Email: <span class="black">&nbsp {% if email == "" %} None {% else %} {{ email }} {% endif %}</span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <form class="form" action="/account" method="post">
+                        <div class="form-section">
+                            <input class="form-input" autocomplete="off"  name="first_name" placeholder="First Name" type="text">
+                            <input class="form-input" autocomplete="off"  name="last_name" placeholder="Last Name" type="text">
+                        </div>
+                        <button class="form-button" type="submit">Change Name</button>
+                    </form>
+                </td><td>
+                    <form class="form" action="/account" method="post">
+                        <div class="form-section">
+                            <input class="form-input" autocomplete="off"  name="email" placeholder="Change Email" type="text">
+                            <input class="form-input" autocomplete="off"  name="email_conf" placeholder="Re-Type New Email" type="text">
+                        </div>
+                        <button class="form-button" type="submit">Change Email</button>
+                    </form>
+                </td>
+            </tr><tr>
+                <td>
+                    <form class="form" action="/account" method="post">
+                        <div class="form-section">
+                            <input class="form-input" autocomplete="off"  name="username" placeholder="Change Username" type="text">
+                            <input class="form-input" autocomplete="off"  name="username_conf" placeholder="Re-Type New Username" type="text">
+                        </div>
+                        <button class="form-button" type="submit">Change Username</button>
+                    </form>
+                </td><td>
+                    <form class="form" action="/account" method="post">
+                        <div class="form-section">
+                            <input class="form-input" name="old_password" placeholder="Old Password" type="password">
+                            <input class="form-input" name="password" placeholder="New Password" type="password">
+                            <input class="form-input" name="password_conf" placeholder="Re-Type New Password" type="password">
+                        </div>
+                        <button class="form-button" type="submit">Change Password</button>
+                    </form>
+                </td>
+            </tr>
+            <tr><td class="form last">                        
+                <div class="form-desc">If you would like to permanently delete your account, click <a id="deactivate-account" class="form-desc-button">here</a></div>
+            </td></td><td></tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

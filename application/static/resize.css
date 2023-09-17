@@ -1,0 +1,259 @@
+@media only screen and (max-width: 1200px)
+{
+    .search-box, .table-title, .table-box
+    {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #account-page .form .form-desc
+    {
+        padding: 30px;
+    }
+    .table
+    {
+        font-size: 1em;
+    }
+    .form .form-desc, .form input[type=text], .form input[type=password], .form select, .form textarea 
+    {
+        width: 75%;
+    }
+
+    .message img
+    {
+        width: 100%;
+    }
+    .message img.smaller-img
+    {
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 800px)
+{
+    .home-logged-in .stores-button
+    {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: auto;
+    }
+    #clear-shopping-list-button, #fav-stores-button
+    {
+        font-size: 12px;
+        height: 25px;
+        top: 5px;
+    }
+    .table
+    {
+        border-radius: 15px;
+    }
+    .skinny
+    {
+        padding-right: 5px;
+    }
+    .skinny-brand
+    {
+        display: none;
+    }
+    .skinny.fav
+    {
+        display: none;
+    }
+    .purple-fav td
+    {
+        color: purple;
+        font-weight: bolder;
+        border-top: 4px solid goldenrod;
+        border-bottom: 4px solid goldenrod;
+    }
+    .purple-fav td:nth-child(2)
+    {
+        border-left: 8px solid goldenrod;
+    }
+    .purple-fav td:last-child
+    {
+        border-right: 8px solid goldenrod;
+    }
+
+
+
+
+    .nearby-add.mini
+    {
+        display: block;
+        width: 30px;
+        font-size: 20px;
+        margin-right: 15px;
+    }
+    .nearby-add.mini span
+    {
+        color: white;
+    }
+    .nearby-add.mini:hover span
+    {
+        color: green;
+    }
+    .nearby-add.big
+    {
+        display: none;
+    }
+
+
+    .map-area .map img
+    {
+        max-width: calc(100% - 20px);
+        max-height: 500px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+        
+
+    #account-page td 
+    {
+        display: block;
+    }
+    #account-page td:not(.form-desc):not(.last)
+    {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+    #account-page tr:nth-child(even) td:nth-child(odd):not(.last), #account-page tr:nth-child(odd) td:nth-child(even):not(.last)
+    {
+        border-bottom: 2px solid #cccccc;
+    }
+    #account-page tr:nth-child(even) td:nth-child(even):not(.last), #account-page tr:nth-child(odd) td:nth-child(odd):not(.last)
+    {
+        border-bottom: 2px solid #e9e9e9;
+    }
+    #account-page .form:not(.last)
+    {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .message img.smaller-img
+    {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 600px)
+{
+    .menu-strip .left, .menu-strip .right
+    {
+        display: none;
+    }
+    .menu-dropdown-button
+    {
+        display: block;
+        position: fixed;
+        top: 25px;
+        right: 20px;
+    }
+    .menu-items
+    {
+        position: fixed;
+        overflow: hidden;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 0px;
+        left: 0;
+        top: 80px;
+        background-color: rgb(243, 241, 241);
+        z-index: 5;
+    }
+    .menu-items button
+    {
+        margin-top: 10px;
+        font-size: 16px;
+        color: white;
+        height: 30px;
+        background-color: transparent;
+        color: goldenrod;
+        cursor: pointer;
+        border: 0px solid white;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        transition: 0.4s;
+        font-family: 'avenir';
+        border-radius: 5px;
+    }
+
+
+    .home-logged-in .stores-button
+    {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        white-space: normal;
+        font-size: 14px;
+        height: auto;
+        width: auto;
+    }
+    .table-title .wordz
+    {
+        max-width: 40vw;
+        text-overflow: ellipsis;
+        font-size: 18px;
+        transform: translateY(20%);
+    }
+    .table-title.stores .stores-buttons
+    {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: 30px;
+    }
+    .table-title.stores
+    {
+        margin-bottom: 10px;
+    }
+
+
+    .listDropdown, .listDropdown #listDropdown-buttons, .listDropdown input[type="text"]
+    {
+        width: 100%;
+    }
+    .listDropdown .list-item
+    {
+        width: calc(100% - 20px);
+    }
+    .listDropdown .list-item .list-name
+    {
+        width: calc(100% - 50px);
+    }
+
+
+    #account-page input
+    {
+        font-size: 12px;
+    }
+
+    .alert-content 
+    {
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 400px)
+{
+    #clear-shopping-list-button, #fav-stores-button
+    {
+        font-size: 10px;
+        height: 25px;
+        top: 5px;
+    }
+
+    .table
+    {
+        font-size: 14px;
+    }
+
+    .alert-desc
+    {
+        margin-top: 50px;
+    }
+}

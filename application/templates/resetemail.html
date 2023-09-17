@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="http://goodshop.pythonanywhere.com/static/styles.css" rel="stylesheet">
+    <link href="http://goodshop.pythonanywhere.com/static/resize.css" rel="stylesheet">
+    <title>Reset Password Email</title>
+</head>
+
+<body class="body" {% block page_name %}{% endblock %}>
+    <div class="header">
+        <button class="header-name" href="http://goodshop.pythonanywhere.com"><div class="goodShop">goodShop</div><div class="by-me">by Harrison Gordon</div></button>
+    </div>
+
+    <div class="form">
+        <a href="http://goodshop.pythonanywhere.com/newpassword/{{token}}"><button class="form-button">Reset Password</button></a>
+        <div class="form-desc">Hi, <i>{{ username }}.</i> To reset your password, click the link above. If you do not recognize this activity, please ignore this message</div>
+    </div>
+
+    <div id="footer"></div>
+</body>

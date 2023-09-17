@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block header %}
+{% endblock %}
+{% block title %}
+    Register
+{% endblock %}
+{% block page_name %} id="register-page" {% endblock %}
+{% block main %}
+<form class="form" action="/register" method="post">
+    <div class="form-section">
+        <input class="form-input" autocomplete="off" autofocus  name="username" placeholder="Username" type="text">
+        <input class="form-input" autocomplete="off"  name="email" placeholder="Email Address" type="text">
+        <input class="form-input" name="password" placeholder="Password" type="password">
+        <input class="form-input" name="password_conf" placeholder="Re-type Password" type="password">
+    </div>
+    <button class="form-button" type="submit">Register</button>
+    <div class="form-desc">If you already have an account, please <a class="form-desc-button" href="/login">login</a></div>
+</form>
+{% endblock %}

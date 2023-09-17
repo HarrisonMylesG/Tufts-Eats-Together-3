@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block header %}
+{% endblock %}
+{% block title %}
+    Reset Password
+{% endblock %}
+{% block page_name %} id="password-reset-page" {% endblock %}
+{% block main %}
+<form class="form" action="/reset" method="post">
+    <div class="form-section">
+        <input class="form-input" autocomplete="off" autofocus  name="username" placeholder="Username" type="text">
+    </div>
+    <button class="form-button" type="submit">Get Reset Email</button>
+    <div class="form-desc">You will recieve an email with a link to reset your password. To login, click <a class="form-desc-button" href="/login">here</a></div>
+</form>
+{% endblock %}

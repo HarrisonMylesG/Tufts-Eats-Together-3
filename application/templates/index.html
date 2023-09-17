@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block header %}
+{% endblock %}
+{% block title %}
+    Home
+{% endblock %}
+{% block page_name %} id="home-page" {% endblock %}
+{% block main %}
+    {% if session.user_id %}
+    <div class="message head">
+        <div class="message-label">Welcome, {{ username }}!</div>
+    </div>
+
+    <div class="home-logged-in">
+    </div>
+
+    <div class="big-button-container">
+        <button class="big-button" data-location="dewick">DEWICK</button>
+        <button class="big-button" data-location="carm">CARM</button>
+    </div>
+
+    <style>
+        .big-button-container {
+            position: relative;
+            /* text-align: center; */
+            display: flex;
+            justify-content: center;
+        }
+        .big-button {
+            width: 200px;
+            height: 200px;
+            margin-left: calc((100%-400px)/2);
+            margin-left: calc((100%-400px)/2);
+            border-radius: 100%;
+            border: none;
+            font-family: 'lulo';
+            background-color: navy;
+            color: white;
+            transition: all 0.4s;
+            margin: 20px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .big-button:hover {
+            background-color: gainsboro;
+            color: black;
+        }
+    </style>
+
+    <div class="centered-container">
+        <select id="timeSelect" class="select-dropdown">
+            <option value="now">NOW</option>
+        </select>
+        <select id="durSelect" class="select-dropdown">
+            <option value="1">1 min</option>
+            <option value="2">2 min</option>
+            <option value="3">3 min</option>
+            
+            <option value="45">45 min</option>
+            <option value="60">60 min</option>
+            <option value="90">1.5 hr</option>
+            <option value="120">2 hr</option>
+        </select>
+    </div>
+
+    <script>
+        // Function to generate times on the quarter hour
+        function generateTimes() {
+            const select = document.getElementById("timeSelect");
+            const now = new Date();
+            now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15); // Round up to the next quarter hour
+            const endTime = new Date(now);
+            endTime.setHours(23, 0, 0, 0); // Set the end time to 8:00 PM
+
+            while (now < endTime) {
+                const option = document.createElement("option");
+                option.value = now.toTimeString().slice(0, 5); // Format as HH:MM
+                option.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                select.appendChild(option);
+                now.setMinutes(now.getMinutes() + 15); // Increment by 15 minutes
+            }
+        }
+
+        // Call the function to generate times when the page loads
+        $(document).ready(function(){ generateTimes(); });
+    </script>
+
+
+    <!-- <div class="billboard"></div> -->
+    <div class="table-box">
+        <table class="table list">
+            <thead>
+                <tr class="list-heading">
+                    <th>Name</th>
+                    <th class="skinny">Location</th>
+                    <th class="skinny">Start Time</th>
+                    <th class="skinny">End Time</th>
+                    <!-- <th class="skinny checkbox"><label class="check-all-container container"><input type='checkbox' id='checkItem' class='check-all'><span class="checkmark"></span></label></th> -->
+                    <!-- <th id="th-status" class="skinny-trip" style="display: none;"></th> -->
+                </tr>
+            </thead>
+
+            <tbody id="list-data">
+                {% for row in table %}
+                    <tr>
+                        <!-- <td class="skinny-brand"><div class="skinny-brand">{{ row["brand"] }}</div></td> -->
+                        <td>{{ row["name"] }}</td>
+                        <td class="skinny">{{ row["location"] }}</td>
+                        <td class="skinny">{{ row["time_start"] }}</td>
+                        <td class="skinny">{{ row["time_end"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% else %}
+    <div class="message head">
+        <div class="message-label">Welcome to</div>
+        <div class="name">Tufts Eats Together</div>
+        <div class="message-label">
+        </div>
+    </div>
+    <div class="message message-label"> About Tufts Eats Together:
+        <div class="message-light">
+            1. Eat with your friends!<br>
+            2. Eat with your friends' friends!<br>
+            3. Eat with your new friends-to-be!<br>
+            ~ That is all, thank you ~
+        </div>
+        <button class="register-button" onclick="window.location.href = '/register';">register</button>
+        <button class="login-button" onclick="window.location.href = '/login';">login</button>
+    </div>
+    {% endif %}
+
+{% endblock %}
